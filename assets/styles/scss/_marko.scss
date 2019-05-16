@@ -1,0 +1,87 @@
+/************************************************
+
+Stylesheet: Theme Stylesheet
+
+*************************************************/
+
+/************************************************
+
+Declarations
+
+*************************************************/
+
+$header-bg: #140030;
+$header-link: #fff;
+$footer-link: #fff;
+$container: 1200px;
+$logo-font: "Exo 2", sans-serif;
+$heading-font: "Roboto Condensed", sans-serif;
+$body-font: "Montserrat", sans-serif;
+
+/************************************************
+
+Helper Classes etc.
+
+*************************************************/
+.max-container {
+  max-width: $container;
+  margin: 0 auto;
+}
+
+/************************************************
+
+Header
+
+*************************************************/
+body {
+  font: 1em/1.5em normal $body-font;
+}
+
+/************************************************
+
+Header
+
+*************************************************/
+.header {
+  background-color: $header-bg;
+  .top-bar,
+  ul.menu {
+    background-color: $header-bg;
+  }
+  a {
+    color: $header-link;
+  }
+  h1 {
+    font-family: $logo-font;
+  }
+}
+
+footer {
+  background-color: $header-bg;
+
+  a,
+  p {
+    color: $footer-link;
+  }
+}
+
+.mysite__logo {
+  width: 150px;
+}
+
+.is-stuck {
+  background-color: $header-bg;
+  .mysite__logo {
+    width: 100px;
+  }
+}
+
+/************************************************
+
+Article
+
+*************************************************/
+
+main {
+  padding: 20px 50px;
+}
