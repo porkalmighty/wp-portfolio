@@ -53,6 +53,7 @@ Header
   }
   h1 {
     font-family: $logo-font;
+    font-size: 1.8rem;
   }
 }
 
@@ -66,13 +67,16 @@ footer {
 }
 
 .mysite__logo {
-  width: 150px;
+  width: 100px;
 }
 
 .is-stuck {
   background-color: $header-bg;
   .mysite__logo {
-    width: 100px;
+    width: 50px;
+  }
+  h1 {
+    font-size: 1.4rem;
   }
 }
 
