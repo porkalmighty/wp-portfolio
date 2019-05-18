@@ -11,6 +11,8 @@ Declarations
 *************************************************/
 
 $header-bg: #140030;
+$hero-bg: #2e2f3a;
+$hero-color: #fff;
 $header-link: #fff;
 $footer-link: #fff;
 $container: 1200px;
@@ -44,7 +46,9 @@ Header
 *************************************************/
 .header {
   background-color: $header-bg;
+  height: 150px;
   .top-bar,
+  .sticky-container,
   ul.menu {
     background-color: $header-bg;
   }
@@ -78,6 +82,20 @@ footer {
   h1 {
     font-size: 1.4rem;
   }
+}
+
+/************************************************
+
+Hero Banner
+
+*************************************************/
+.hero-banner {
+  background-color: $hero-bg;
+  color: $hero-color;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  margin-top: -150px; /*adjust to header height*/
 }
 
 /************************************************

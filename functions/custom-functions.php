@@ -2,24 +2,6 @@
 // Creating my portfolio custom post type function
 // reference material: https://www.wpbeginner.com/wp-tutorials/how-to-create-custom-post-types-in-wordpress/
 
-function portfolio_post_type() {
-
-    register_post_type( 'portfolio',
-    // CPT Options
-        array(
-            'labels' => array(
-                'name' => __( 'Portfolios' ),
-                'singular_name' => __( 'Portfolio' )
-            ),
-            'public' => true,
-            'has_archive' => true,
-            'rewrite' => array('slug' => 'portfolio'),
-        )
-    );
-}
-// Hooking up our function to theme setup
-add_action( 'init', 'portfolio_post_type' );
-
 /*
 * Register CPT options for Portfolio
 */
@@ -89,30 +71,6 @@ add_action( 'init', 'custom_post_porfolio', 0 );
 /*
  * CPT for Skills
  */
- // Creating my portfolio custom post type function
- function skill_post_type() {
-
-     register_post_type( 'skill',
-     // CPT Options
-         array(
-             'labels' => array(
-                 'name' => __( 'Skills' ),
-                 'singular_name' => __( 'Skill' )
-             ),
-             'public' => true,
-             'has_archive' => true,
-             'rewrite' => array('slug' => 'skill'),
-         )
-     );
- }
- // Hooking up our function to theme setup
- add_action( 'init', 'skill_post_type' );
-
-
- /*
- * Register CPT options for Skills
- */
-
  function custom_post_skill() {
 
  // Set UI labels for Custom Post Type
