@@ -12,6 +12,7 @@ Declarations
 
 $header-bg: #140030;
 $hero-bg: #2e2f3a;
+$off-white: #e9e9e9;
 $hero-color: #fff;
 $header-link: #fff;
 $footer-link: #fff;
@@ -28,6 +29,15 @@ Helper Classes etc.
 .max-container {
   max-width: $container;
   margin: 0 auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $heading-font;
 }
 
 /************************************************
@@ -96,6 +106,20 @@ Hero Banner
   justify-content: center;
   align-items: center;
   margin-top: -150px; /*adjust to header height*/
+  background-image: url("../images/hero-bg-min.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+
+  h2 {
+    font-size: 3em;
+  }
+}
+
+.full-section {
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
 }
 
 /************************************************
@@ -104,6 +128,64 @@ Article
 
 *************************************************/
 
-main {
-  padding: 20px 50px;
+#home {
+  article {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 5px;
+  }
+}
+
+#works,
+#about,
+#skill {
+  padding: 20px;
+}
+
+#works {
+  .entry-content {
+    padding: 20px;
+  }
+}
+
+#works {
+  background-color: $off-white;
+}
+
+#about {
+  background-color: $hero-bg;
+  color: $off-white;
+  img {
+    margin-bottom: 0px;
+  }
+}
+
+#skills {
+  background: $off-white;
+  img {
+    width: 100px;
+  }
+}
+
+.equal {
+  align-items: center;
+  text-align: center;
+  .cell {
+    padding: 20px 0;
+  }
+
+  h2 {
+    text-transform: capitalize;
+  }
+}
+
+/************************************************
+
+Footer
+
+*************************************************/
+.content {
+  footer {
+    margin-top: 0px;
+  }
 }

@@ -36,7 +36,7 @@ function custom_post_porfolio() {
         // shows the gutenberg editor
         'show_in_rest' => true,
         // You can associate this CPT with a taxonomy or custom taxonomy.
-        'taxonomies'          => array( 'genres' ),
+        'taxonomies'          => array( 'post_tag' ),
         /* A hierarchical CPT is like Pages and can have
         * Parent and child items. A non-hierarchical CPT
         * is like Posts.
@@ -101,7 +101,7 @@ add_action( 'init', 'custom_post_porfolio', 0 );
          // shows the gutenberg editor
          'show_in_rest' => true,
          // You can associate this CPT with a taxonomy or custom taxonomy.
-         'taxonomies'          => array( 'genres' ),
+         'taxonomies'          => array( 'category' ),
          /* A hierarchical CPT is like Pages and can have
          * Parent and child items. A non-hierarchical CPT
          * is like Posts.
@@ -131,3 +131,11 @@ add_action( 'init', 'custom_post_porfolio', 0 );
  */
 
  add_action( 'init', 'custom_post_skill', 0 );
+
+ // debug
+
+ function pretty_debug($data) {
+   echo "<pre>";
+   print_r($data);
+   echo "</pre>";
+ }
