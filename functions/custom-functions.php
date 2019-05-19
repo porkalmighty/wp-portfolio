@@ -134,7 +134,8 @@ add_action( 'init', 'custom_post_porfolio', 0 );
 
  // debug
 
- function pretty_debug($data) {
+ function pretty_debug($data)
+ {
    echo "<pre>";
    print_r($data);
    echo "</pre>";
