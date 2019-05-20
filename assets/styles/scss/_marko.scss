@@ -13,6 +13,7 @@ Declarations
 $header-bg: #140030;
 $hero-bg-a: rgba(46, 47, 58, 0.6);
 $hero-bg: #2e2f3a;
+$light-blue: #00a8eb;
 $trans-black: rgba(0, 0, 0, 0.6);
 $off-white: #e9e9e9;
 $card-bg: #dedede;
@@ -23,6 +24,16 @@ $container: 1200px;
 $logo-font: "Exo 2", sans-serif;
 $heading-font: "Roboto Condensed", sans-serif;
 $body-font: "Montserrat", sans-serif;
+
+@mixin filter-vendors($property) {
+  -webkit-filter: $property;
+  filter: $property;
+}
+
+%center-flex {
+  justify-content: center;
+  align-items: center;
+}
 
 /************************************************
 
@@ -59,7 +70,6 @@ Header
 *************************************************/
 .header {
   background-color: $header-bg;
-  height: 150px;
   .top-bar,
   .sticky-container,
   ul.menu {
@@ -67,6 +77,12 @@ Header
   }
   a {
     color: $header-link;
+  }
+  .active,
+  .is-active {
+    a {
+      background-color: transparent;
+    }
   }
   h1 {
     font-family: $logo-font;
@@ -106,15 +122,22 @@ footer {
 Hero Banner
 
 *************************************************/
+.button {
+  background-color: $hero-bg;
+
+  &:hover {
+    background-color: $light-blue;
+  }
+}
+
 .hero-banner {
+  @extend %center-flex;
   background-color: $hero-bg-a;
   color: $hero-color;
   height: 100vh;
   position: relative;
-  justify-content: center;
-  align-items: center;
 
-  h2 {
+  &h2 {
     font-size: 3em;
   }
 }
@@ -125,13 +148,13 @@ Hero Banner
   background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom;
+  height: auto;
 }
 
 .full-section {
   height: 100vh;
   width: 100vw;
-  justify-content: center;
-  align-items: center;
+  @extend %center-flex;
   margin: 0 auto;
 }
 
@@ -171,7 +194,7 @@ Article
     border-radius: 5px;
 
     h2 {
-      font-size: 4em;
+      font-size: 3em;
     }
   }
 }
@@ -203,9 +226,37 @@ Article
 
 #skills {
   background: $off-white;
+  padding: 40px 0;
   img {
     width: 100px;
+    @include filter-vendors(grayscale(100%));
   }
+}
+
+#contact {
+  padding: 40px;
+}
+
+#portfolio {
+  background-color: $off-white;
+
+  .entry-content {
+    padding: 20px;
+
+    img {
+      padding: 10px;
+    }
+  }
+}
+
+.portfolio {
+  @extend %center-flex;
+  text-align: center;
+}
+
+.article-footer {
+  background: transparent;
+  padding: 10px;
 }
 
 .equal {
@@ -230,8 +281,13 @@ Article
     flex: 1 100%;
     align-self: flex-start;
     background-color: $hero-bg;
-    color: $off-white;
     border-radius: 5px 5px 0 0;
+    a {
+      color: $off-white;
+      &:hover {
+        color: $light-blue;
+      }
+    }
   }
   .card-image {
     flex: 3 100%;
@@ -244,6 +300,7 @@ Article
 }
 
 span.tags {
+  font-size: 0.75em;
   display: inline-flex;
   padding: 7px;
   margin: 5px;
@@ -259,5 +316,14 @@ Footer
 .content {
   footer {
     margin-top: 0px;
+    text-align: center;
+    ul {
+      justify-content: center;
+
+      a,
+      i {
+        font-size: 1.5em;
+      }
+    }
   }
 }

@@ -29,6 +29,7 @@
 	    <?php } ?>
 
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Exo+2:500|Montserrat|Roboto+Condensed:700" rel="stylesheet">
 		<?php wp_head(); ?>
 

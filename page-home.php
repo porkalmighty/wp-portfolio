@@ -41,7 +41,7 @@ get_header(); ?>
 						<?php
 						$portfolio_params = array(
 							'post_type' => 'portfolios',
-							'posts_per_page' => 6,
+							'posts_per_page' => 3,
 						);
 
 						$portfolio = new WP_Query($portfolio_params);

@@ -10,7 +10,7 @@
 	<div class="entry-content" itemprop="text">
 		<div class="card" data-equalizer-watch>
 			<div class="card-divider">
-				<?php the_title();?>
+				<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
 			</div>
 			<div class="card-image">
 				<?php the_post_thumbnail('full'); ?>
