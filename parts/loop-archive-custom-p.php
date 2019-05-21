@@ -13,11 +13,11 @@
 				<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
 			</div>
 			<div class="card-image">
-				<?php the_post_thumbnail('full'); ?>
+				<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail('full'); ?></a>
 			</div>
 			<div class="card-section">
 				<?php
-					the_content();
+					the_excerpt();
 					$post_tags = get_the_tags();
 
 					if ( $post_tags ) {

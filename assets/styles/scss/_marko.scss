@@ -115,6 +115,19 @@ footer {
   h1 {
     font-size: 1.4rem;
   }
+  .is-dropdown-submenu a {
+    font-size: 0.75em;
+  }
+}
+
+.dropdown.menu.medium-horizontal {
+  li.opens-left {
+    .is-dropdown-submenu {
+      right: auto;
+      left: 0;
+      border: 0;
+    }
+  }
 }
 
 /************************************************
@@ -251,12 +264,35 @@ Article
 
 .portfolio {
   @extend %center-flex;
-  text-align: center;
+  text-align: left;
+  h3,
+  h4 {
+    margin: 15px 0;
+  }
+}
+
+.button-group {
+  @extend %center-flex;
+  margin: 25px 0;
+}
+
+.flickity-slider {
+  .blockgallery--item {
+    .blockgallery--figure {
+      img {
+        object-fit: contain;
+      }
+    }
+  }
 }
 
 .article-footer {
   background: transparent;
   padding: 10px;
+
+  .tag__list {
+    margin-bottom: 10px;
+  }
 }
 
 .equal {
