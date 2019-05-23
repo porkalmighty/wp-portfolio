@@ -35,9 +35,15 @@ $body-font: "Montserrat", sans-serif;
   align-items: center;
 }
 
+%font-awsm {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  padding-right: 8px;
+}
+
 /************************************************
 
-Helper Classes etc.
+General, Helper Classes etc.
 
 *************************************************/
 .max-container {
@@ -54,13 +60,36 @@ h6 {
   font-family: $heading-font;
 }
 
-/************************************************
+textarea.wpcf7-textarea {
+  height: 90px;
+}
 
-Header
+.contact-details {
+  list-style: none;
+  margin: 0;
 
-*************************************************/
+  a {
+    color: #000;
+    &[href^="mailto:"]:before {
+      @extend %font-awsm;
+      content: "\f199";
+    }
+    &[href^="callto:"]:before {
+      @extend %font-awsm;
+      content: "\f098";
+    }
+  }
+}
+
 body {
   font: 1em/1.5em normal $body-font;
+}
+
+.custom-hr {
+  width: 80%;
+  margin-left: 0;
+  margin-top: 1.5rem;
+  border-color: #000;
 }
 
 /************************************************
@@ -91,6 +120,7 @@ Header
 
   * {
     z-index: 100;
+    padding: 0;
   }
 }
 
@@ -155,7 +185,7 @@ Hero Banner
   }
 }
 
-.isMobile {
+.hero-banner.isMobile {
   background-image: url("../images/hero-bg-overlay-min.jpg");
   // background-image: url("../videos/coding/code.jpg");
   background-size: cover;
@@ -231,9 +261,16 @@ Article
 #about {
   background-color: $hero-bg;
   color: $off-white;
+  padding: 5em;
+
   img {
     margin-bottom: 0px;
-    border-radius: 5px;
+    border-radius: 50%;
+    width: 170px;
+  }
+
+  .wp-block-media-text__media {
+    text-align: right;
   }
 }
 
@@ -241,13 +278,13 @@ Article
   background: $off-white;
   padding: 40px 0;
   img {
-    width: 100px;
-    @include filter-vendors(grayscale(100%));
+    width: 88px;
+    // @include filter-vendors(grayscale(100%));
   }
 }
 
-#contact {
-  padding: 40px;
+.contact{
+  padding: 100px 0;
 }
 
 #portfolio {
@@ -312,12 +349,12 @@ Article
   justify-content: center;
   overflow: unset;
   background-color: $card-bg;
-  border-radius: 5px;
+  border-radius: 10px;
   .card-divider {
     flex: 1 100%;
     align-self: flex-start;
     background-color: $hero-bg;
-    border-radius: 5px 5px 0 0;
+    border-radius: 10px 10px 0 0;
     a {
       color: $off-white;
       &:hover {
@@ -337,6 +374,7 @@ Article
 
 span.tags {
   font-size: 0.75em;
+  font-weight: 900;
   display: inline-flex;
   padding: 7px;
   margin: 5px;
@@ -349,17 +387,33 @@ span.tags {
 Footer
 
 *************************************************/
-.content {
-  footer {
-    margin-top: 0px;
-    text-align: center;
-    ul {
-      justify-content: center;
 
-      a,
-      i {
-        font-size: 1.5em;
-      }
+footer {
+  margin-top: 0px;
+  text-align: center;
+  padding-top: 25px;
+  ul {
+    justify-content: center;
+
+    a,
+    i {
+      font-size: 1.5em;
+    }
+  }
+}
+
+/************************************************
+
+Media Queries
+
+*************************************************/
+
+@media screen and (max-width: 640px) {
+  #about {
+    padding: 5em;
+    .wp-block-media-text__media,
+    .wp-block-media-text__content {
+      text-align: center;
     }
   }
 }

@@ -19,9 +19,6 @@ get_header(); ?>
 						reference material: https://slicejack.com/fullscreen-html5-video-background-css/
 					-->
 					<video loop muted autoplay poster="<?php the_post_thumbnail('full'); ?>" class="fullscreen__video">
-						<!-- <source src="<?php //bloginfo('template_directory'); ?>/assets/videos/push/push.webm" type="video/webm">
-			      <source src="<?php //bloginfo('template_directory'); ?>/assets/videos/push/push.mp4" type="video/mp4">
-						<source src="<?php //bloginfo('template_directory'); ?>/assets/videos/push/push.ogv" type="video/ogg"> -->
 						<source src="<?php bloginfo('template_directory'); ?>/assets/videos/coding/code.webm" type="video/webm">
 			      <source src="<?php bloginfo('template_directory'); ?>/assets/videos/coding/code.mp4" type="video/mp4">
 						<source src="<?php bloginfo('template_directory'); ?>/assets/videos/coding/code.ogv" type="video/ogg">
@@ -130,10 +127,22 @@ get_header(); ?>
 			<section id="contact" class="inner-content grid-x grid-margin-x grid-padding-x">
 				<div class="max-container">
 					<div class="small-12 large-8 medium-8 cell">
-						<header class="cell text-center">
-							<h2>Contact Me</h2>
-						</header>
-						<?php echo do_shortcode('[contact-form-7 id="122" title="Contact form 1"]'); ?>
+						<?php
+						$contact_params = array(
+							'page_id' => 173,
+						);
+
+						$contact = new WP_Query($contact_params);
+
+						if ($contact->have_posts()):
+							while ($contact->have_posts()):
+								$contact->the_post();
+								get_template_part( 'parts/loop', 'mypage-contact' );
+							endwhile;
+						endif;
+							//reset WP_Query
+							wp_reset_postdata();
+						?>
 					</div>
 				</div>
 			</section>

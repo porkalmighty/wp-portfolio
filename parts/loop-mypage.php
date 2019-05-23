@@ -11,7 +11,6 @@
 	</header> <!-- end article header -->
 
   <section class="entry-content" itemprop="text">
-    <?php the_content(); ?>
+    <?php the_content();?>
 	</section> <!-- end article section -->
-
 </article> <!-- end article -->

@@ -24,7 +24,14 @@ $breakpoint = "medium"; ?>
           </ul>
         </div>
         <div class="top-bar-right">
-          <?php joints_top_nav(); ?>
+          <?php
+            // loads the alt menu if the page is not the front page
+            if(is_front_page()):
+              joints_top_nav();
+            else:
+              joints_top_nav('alt-nav');
+            endif;
+          ?>
         </div>
       </div>
     </div>

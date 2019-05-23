@@ -29,7 +29,7 @@ function custom_post_porfolio() {
 
     $args = array(
         'label'               => __( 'portfolios', 'marko-portfolio' ),
-        'description'         => __( 'Portfolio entries', 'marko-portfolio' ),
+        'description'         => __( 'My Portfolio', 'marko-portfolio' ),
         'labels'              => $labels,
         // Features this CPT supports in Post Editor
         'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
@@ -94,7 +94,7 @@ add_action( 'init', 'custom_post_porfolio', 0 );
 
      $args = array(
          'label'               => __( 'skills', 'marko-portfolio' ),
-         'description'         => __( 'Skill entries', 'marko-portfolio' ),
+         'description'         => __( 'Skills and Experience', 'marko-portfolio' ),
          'labels'              => $labels,
          // Features this CPT supports in Post Editor
          'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
