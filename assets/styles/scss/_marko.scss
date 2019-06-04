@@ -124,15 +124,6 @@ Header
   }
 }
 
-footer {
-  background-color: $header-bg;
-
-  a,
-  p {
-    color: $footer-link;
-  }
-}
-
 .mysite__logo {
   width: 100px;
 }
@@ -331,6 +322,10 @@ Article
   .tag__list {
     margin-bottom: 10px;
   }
+
+  .button {
+    border-radius: 5px;
+  }
 }
 
 .equal {
@@ -392,11 +387,19 @@ span.tags {
 Footer
 
 *************************************************/
+.footer {
+  margin-top: 0;
+}
 
 footer {
-  margin-top: 0px;
   text-align: center;
   padding-top: 25px;
+  background-color: $header-bg;
+  a,
+  p {
+    color: $footer-link;
+  }
+
   ul {
     justify-content: center;
 
