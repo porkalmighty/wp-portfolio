@@ -17,10 +17,10 @@
 	<footer class="article-footer">
 		<section class="entry-content section-links">
 			<?php if(get_post_meta($post->ID, 'cta_works', true)):?>
-				<a href="#works" class="button"> I'm interested, whatcha got?</a>
+				<a href="#works" class="button">Check out my portfolio</a>
 			<?php endif; ?>
 			<?php if(get_post_meta($post->ID, 'cta_contact', true)):?>
-				<a href="#contact" class="button"> I want to contact you</a>
+				<a href="#contact" class="button">Let's work together!</a>
 			<?php endif; ?>
 		</section>
 	</footer>

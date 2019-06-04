@@ -300,6 +300,7 @@ Article
 }
 
 .portfolio {
+  background-color: #e9e9e9;
   @extend %center-flex;
   text-align: left;
   h3,
@@ -381,6 +382,10 @@ span.tags {
   background: lightblue;
   border-radius: 5px;
 }
+
+.has-tip {border: none;}
+
+#contact {padding: 0 20px;}
 
 /************************************************
 

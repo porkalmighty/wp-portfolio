@@ -12,7 +12,7 @@ get_header(); ?>
 			<?php
 			// check if the device is mobile or desktop
 			$device = wp_is_mobile() ? "isMobile" : "isDesktop"; ?>
-			<section id="home" class="hero-banner inner-content grid-x grid-margin-x grid-padding-x <?$device;?>">
+			<section id="home" class="hero-banner inner-content grid-x grid-margin-x grid-padding-x <?=$device;?>">
 				<?php if($device == "isDesktop"): ?>
 					<!--
 						video background:

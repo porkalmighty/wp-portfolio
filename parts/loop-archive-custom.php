@@ -7,10 +7,10 @@
 ?>
 
 <div id="post-<?php the_ID(); ?>" <?php post_class(''); ?> role="article">
-	<div class="entry-content" itemprop="text">
+	<div class="entry-content" itemprop="text" data-tooltip tabindex="1" title="<?=the_title();?>" data-position="bottom" data-alignment="left">
 		<?php the_post_thumbnail('full'); ?>
 		<?php
-			// the_title();
+			// display content
 			the_content();
 		?>
 	</div> <!-- end article section -->
